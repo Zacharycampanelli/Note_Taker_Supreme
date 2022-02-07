@@ -4,8 +4,10 @@
       "title": "Test Title",
       "text": "Test text"
     },
-    null,
-    null,
-    null
+    {
+      "title": "Note Title",
+      "text": "Note Text",
+      "id": "1"
+    }
   ]
 }
