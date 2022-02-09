@@ -7,13 +7,18 @@ router.get('/notes', (req, res) => {
 });
 
 router.post('/notes', (req, res) => {
-    // set id based on the next index of the array
-  req.body.id = notes.length.toString();
+
 
   //add note to json file and note array 
-  const note = createNote(req.body, notes);
-
-  res.json(note);
+  let addedNote = req.body;
+  addedNote.id = notes.length.toString();
+  notes.push(newNote);
+  return res.json(addedNote);
 });
+
+router.delete('/notes/:id', (req, res) => {
+  deleteNote(req.body.id);
+
+})
 
 module.exports = router;
