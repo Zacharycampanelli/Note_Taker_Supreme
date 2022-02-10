@@ -7,13 +7,15 @@ router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../../public/index.html'));
 });
 
-router.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../public/index.html'));
-});
 
-// Get Requests for notes.html
+// GET Requests for notes.html
 router.get('/notes', (req, res) => {
   res.sendFile(path.join(__dirname, '../../public/notes.html'));
+});
+
+// All other GET requests return to index.html
+router.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../public/index.html'));
 });
 
 module.exports = router;
